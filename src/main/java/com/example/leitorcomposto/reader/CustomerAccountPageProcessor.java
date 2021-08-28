@@ -15,8 +15,8 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 public class CustomerAccountPageProcessor implements PageProcessor<CustomerAccount> {
   private NamedParameterJdbcTemplate jdbcTemplate;
 
-  public void setDataSource(DataSource dataSource) {
-    jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
+  public void setDataSource(DataSource customerDS) {
+    jdbcTemplate = new NamedParameterJdbcTemplate(customerDS);
   }
 
   @Override
