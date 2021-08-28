@@ -18,9 +18,8 @@ public class LeitorCompostoStepConfig {
   private StepBuilderFactory stepBuilderFactory;
 
   @Bean
-  public Step leitorCompostoStep(ItemReader<Customer> reader, ItemProcessor<Customer, CustomerAccount> processor,
-      ItemWriter<CustomerAccount> writer) {
-    return stepBuilderFactory.get("leitorCompostoStep").<Customer, CustomerAccount>chunk(10).reader(reader)
-        .processor(processor).writer(writer).build();
+  public Step leitorCompostoStep(ItemReader<CustomerAccount> reader, ItemWriter<CustomerAccount> writer) {
+    return stepBuilderFactory.get("leitorCompostoStep").<CustomerAccount, CustomerAccount>chunk(10).reader(reader)
+        .writer(writer).build();
   }
 }
